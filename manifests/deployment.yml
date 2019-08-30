@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: msalexanderjavascriptksexample 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: msalexanderjavascriptksexample 
+    spec:
+      containers:
+        - name: msalexanderjavascriptksexample 
+          image: alyouncr1.azurecr.io/msalexanderjavascriptksexample 
+          ports:
+          - containerPort: 8080

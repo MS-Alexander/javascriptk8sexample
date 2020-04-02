@@ -1,9 +1,12 @@
-apiVersion : apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: msalexanderjavascriptksexample 
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: msalexanderjavascriptksexample
   template:
     metadata:
       labels:
@@ -11,6 +14,10 @@ spec:
     spec:
       containers:
         - name: msalexanderjavascriptksexample 
-          image: alyouncr1.azurecr.io/msalexanderjavascriptksexample 
+          image: alyouncr1.azurecr.io/msalexanderjavascriptksexample:139 
           ports:
           - containerPort: 8080
+          resources:
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
